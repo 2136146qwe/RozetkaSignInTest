@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test name="C:/Users/21361/IdeaProjects/PageObject">
-    <classes>
-            <class name="tests.signUp.SignUPTest"/>
-        <class name="tests.signUp.SignInTest"/>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="testng" verbose="1">
+    <test name="QaMadnessTask">
+        <classes>
+            <class name="GitHubTest">
+                <methods>
+                    <include name="correctLoginTest"/>
+                    <include name="unsuccessfulSignInWithInvalidEmailTest"/>
+                    <include name="unsuccessfulSignInWithInvalidPasswordTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
