@@ -1,0 +1,58 @@
+package pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.logging.Logger;
+
+public class SignInPage extends Page {
+
+    private static final Logger log = Logger.getLogger(String.valueOf(SignInPage.class));
+
+    public SignInPage(PageManager pages){
+        super(pages);
+    }
+
+    @FindBy(xpath = "//input[@id = 'registerUserName']")
+    WebElement userNameField;
+
+    @FindBy(xpath = "//input[@id = 'registerUserSurname']")
+    WebElement userSurnameField;
+
+    @FindBy(xpath = "//input[@id = 'registerUserPassword']")
+    WebElement userPasswordField;
+
+    @FindBy(xpath = "//input[@value = 'Sign in']")
+    WebElement signInButton;
+
+    @FindBy(xpath = "//input[@id = 'registerUserPhone']")
+    WebElement userNumberField;
+
+    @FindBy(xpath = "//input[@id = 'registerUserEmail']")
+    WebElement userEmailField;
+
+   // @FindBy(xpath = "//div[@class = 'px-2']")
+   // WebElement errorMessage;
+
+    public void fillUserNameField(String userName){
+        wait.until(ExpectedConditions.visibilityOf(userNameField)).sendKeys(userName);
+    }
+    public void fillUserSurnameField(String userSurname){
+        wait.until(ExpectedConditions.visibilityOf(userSurnameField)).sendKeys(userSurname);
+    }
+    public void fillUserNumberField(String userNumber){
+        wait.until(ExpectedConditions.visibilityOf(userNumberField)).sendKeys(userNumber);
+    }
+    public void fillUserEmailField(String userEmail) {
+        wait.until(ExpectedConditions.visibilityOf(userEmailField)).sendKeys(userEmail);
+    }
+    public void fillUserPasswordField(String userPassword){
+        wait.until(ExpectedConditions.visibilityOf(userPasswordField)).sendKeys(userPassword);
+    }
+    public void clickOnSignInButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
+    }
+   // public String getErrorMessage(){
+   //     return wait.until(ExpectedConditions.visibilityOf(errorMessage)).getText();
+    }
