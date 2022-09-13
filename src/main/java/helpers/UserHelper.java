@@ -1,0 +1,25 @@
+package helpers;
+
+import managers.AppManager;
+import org.openqa.selenium.WebElement;
+import pages.PageManager;
+
+public class UserHelper extends PageManager {
+
+    public UserHelper() {
+        super(AppManager.getWebDriver());
+    }
+
+    public void userSignIn(String userName, String userPassword, String userSurname, String userNumber,
+                           String userEmail) {
+        homePage.clickOnUserMenuButton();
+        signInPage.clickOnSignInButton();
+        signInPage.fillUserNameField(userName);
+        signInPage.fillUserPasswordField(userPassword);
+        signInPage.fillUserSurnameField(userSurname);
+        signInPage.fillUserNumberField(userNumber);
+        signInPage.fillUserEmailField(userEmail);
+        signInPage.clickOnSignInButton();
+    }
+}
+
