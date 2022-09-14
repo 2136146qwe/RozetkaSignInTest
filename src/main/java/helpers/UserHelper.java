@@ -1,7 +1,6 @@
 package helpers;
 
 import managers.AppManager;
-import org.openqa.selenium.WebElement;
 import pages.PageManager;
 
 public class UserHelper extends PageManager {

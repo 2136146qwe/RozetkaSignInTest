@@ -26,15 +26,9 @@ public class HomePage extends Page {
     public void clickOnUserMenuButton() {
         wait.until(ExpectedConditions.elementToBeClickable(userMenuButton)).click();
     }
+
     public void clickOnTheSignInButton() {
         wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
     }
 
-   // public WebElement getViewProfileMenuButton() {
-   //     return viewProfileMenuButton;
-   // }
-
-   // public void clickOnTheViewProfileMenuButton() {
-   //     wait.until(ExpectedConditions.elementToBeClickable(viewProfileMenuButton)).click();
-   // }
 }
