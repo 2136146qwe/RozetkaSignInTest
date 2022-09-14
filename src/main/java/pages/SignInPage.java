@@ -55,5 +55,7 @@ public class SignInPage extends Page {
 
     public void clickOnSignInButton() {
         wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
+
     }
 }
+

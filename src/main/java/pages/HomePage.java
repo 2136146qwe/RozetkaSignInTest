@@ -27,7 +27,7 @@ public class HomePage extends Page {
         wait.until(ExpectedConditions.elementToBeClickable(userMenuButton)).click();
     }
 
-    public void clickOnTheSignInButton() {
+    public void clickOnSignInButton() {
         wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
     }
 

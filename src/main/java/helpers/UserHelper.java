@@ -18,7 +18,7 @@ public class UserHelper extends PageManager {
         signInPage.fillUserSurnameField(userSurname);
         signInPage.fillUserNumberField(userNumber);
         signInPage.fillUserEmailField(userEmail);
-        signInPage.clickOnSignInButton();
+        // signInPage.clickOnSignInButton();
     }
 }
 
