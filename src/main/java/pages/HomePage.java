@@ -19,7 +19,7 @@ public class HomePage extends Page {
     @FindBy(xpath = "//button[@class='header__button ng-star-inserted']")
     WebElement userMenuButton;
 
-    @FindBy(xpath = "//button[@class='auth-modal__register-link button button--link ng-star-inserted']")
+    @FindBy(xpath = "//button[contains (@class,'register-link')]")
     WebElement signInButton;
 
 

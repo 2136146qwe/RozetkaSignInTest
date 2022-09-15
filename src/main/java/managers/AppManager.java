@@ -34,15 +34,12 @@ public class AppManager {
         navigationHelper = new NavigationHelper();
         log.info("chrome web driver started");
     }
-
     public static WebDriver getWebDriver() {
         return driver;
     }
-
     public UserHelper getUserHelper() {
         return userHelper;
     }
-
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
     }

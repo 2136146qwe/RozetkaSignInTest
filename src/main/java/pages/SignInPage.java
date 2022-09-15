@@ -29,7 +29,7 @@ public class SignInPage extends Page {
     @FindBy(id = "registerUserEmail")
     WebElement userEmailField;
 
-    @FindBy(id = "Sign in")
+    @FindBy(xpath = "//button[contains (@class,'register-link')]")
     WebElement signInButton;
 
 
