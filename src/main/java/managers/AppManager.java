@@ -19,7 +19,7 @@ public class AppManager {
     private NavigationHelper navigationHelper;
     private UserHelper userHelper;
 
-    AppManager() {
+    public AppManager() {
         File chromeDriver = new File("C:\\Users\\21361\\IdeaProjects\\PageObject\\src\\main\\resources\\chromedriver.exe");
         ChromeDriverService chromeDriverService = new ChromeDriverService.Builder()
                 .usingDriverExecutable(chromeDriver)
@@ -34,12 +34,15 @@ public class AppManager {
         navigationHelper = new NavigationHelper();
         log.info("chrome web driver started");
     }
+
     public static WebDriver getWebDriver() {
         return driver;
     }
+
     public UserHelper getUserHelper() {
         return userHelper;
     }
+
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
     }

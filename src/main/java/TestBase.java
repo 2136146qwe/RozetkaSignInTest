@@ -1,14 +1,12 @@
-import helpers.UserHelper;
 import managers.AppManager;
-import managers.SingletonAppManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 public class TestBase {
 
-    AppManager app = SingletonAppManager.getInstance().manager;
-    UserHelper userHelper = app.getUserHelper();
-    WebDriver driver = AppManager.getWebDriver();
+    public AppManager app;
+    private WebDriver driver;
+
 
     @BeforeMethod
     public void beforeMethod() {
@@ -20,6 +18,8 @@ public class TestBase {
 
     @BeforeSuite
     public void beforeSuite() {
+        app = new AppManager();
+        driver = AppManager.getWebDriver();
     }
 
 

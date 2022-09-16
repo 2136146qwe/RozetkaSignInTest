@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 public class SignInPage extends Page {
@@ -29,8 +30,11 @@ public class SignInPage extends Page {
     @FindBy(id = "registerUserEmail")
     WebElement userEmailField;
 
-    @FindBy(xpath = "//button[contains (@class,'register-link')]")
+    @FindBy(xpath = "//rz-register//button[@type='submit']")
     WebElement signInButton;
+
+    @FindBy(xpath = "//input[contains(@class,'invalid')]")
+    List<WebElement> invalidFields;
 
 
     public void fillUserNameField(String userName) {
@@ -56,6 +60,10 @@ public class SignInPage extends Page {
     public void clickOnSignInButton() {
         wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
 
+    }
+
+    public List<WebElement> getInvalidFields() {
+        return invalidFields;
     }
 }
 

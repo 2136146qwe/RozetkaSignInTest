@@ -12,7 +12,7 @@ public class UserHelper extends PageManager {
     public void userSignIn(String userName, String userPassword, String userSurname, String userNumber,
                            String userEmail) {
         homePage.clickOnUserMenuButton();
-        signInPage.clickOnSignInButton();
+        homePage.clickOnSignInButton();
         signInPage.fillUserNameField(userName);
         signInPage.fillUserPasswordField(userPassword);
         signInPage.fillUserSurnameField(userSurname);
@@ -20,5 +20,11 @@ public class UserHelper extends PageManager {
         signInPage.fillUserEmailField(userEmail);
         // signInPage.clickOnSignInButton();
     }
+
+    public int getNumberOfInvalidFields() {
+        return signInPage.getInvalidFields().size();
+
+    }
+
 }
 
