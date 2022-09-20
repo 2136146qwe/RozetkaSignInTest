@@ -9,14 +9,14 @@ public class PageManager {
     protected SignInPage signInPage;
     protected HomePage homePage;
 
-    public PageManager(WebDriver driver){
+    public PageManager(WebDriver driver) {
         this.driver = driver;
         signInPage = initElements(new SignInPage(this));
         homePage = initElements(new HomePage(this));
     }
 
-    private <T extends Page> T initElements(T page){
-        PageFactory.initElements(driver,page);
+    private <T extends Page> T initElements(T page) {
+        PageFactory.initElements(driver, page);
         return page;
     }
 

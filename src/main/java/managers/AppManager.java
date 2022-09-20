@@ -19,15 +19,15 @@ public class AppManager {
     private NavigationHelper navigationHelper;
     private UserHelper userHelper;
 
-    AppManager(){
-        File chromeDriver = new File("Users/21361/IdeaProjects/PageObject/src/main/resources/chromedriver");
+    public AppManager() {
+        File chromeDriver = new File("C:\\Users\\21361\\IdeaProjects\\PageObject\\src\\main\\resources\\chromedriver.exe");
         ChromeDriverService chromeDriverService = new ChromeDriverService.Builder()
                 .usingDriverExecutable(chromeDriver)
                 .usingAnyFreePort()
                 .build();
         ChromeOptions chromeOptions = new ChromeOptions()
                 .addArguments("--start-maximized");
-        driver = new ChromeDriver(chromeDriverService,chromeOptions);
+        driver = new ChromeDriver(chromeDriverService, chromeOptions);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         userHelper = new UserHelper();
@@ -35,7 +35,15 @@ public class AppManager {
         log.info("chrome web driver started");
     }
 
-    public static WebDriver getWebDriver(){return driver;}
-    public UserHelper getUserHelper(){return userHelper;}
-    public NavigationHelper getNavigationHelper(){return navigationHelper;}
+    public static WebDriver getWebDriver() {
+        return driver;
+    }
+
+    public UserHelper getUserHelper() {
+        return userHelper;
+    }
+
+    public NavigationHelper getNavigationHelper() {
+        return navigationHelper;
+    }
 }

@@ -1,6 +1,8 @@
 package helpers;
+
 import managers.AppManager;
 import pages.PageManager;
+
 public class NavigationHelper extends PageManager {
 
     public NavigationHelper() {

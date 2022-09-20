@@ -9,128 +9,127 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <aspectj.version>1.8.10</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <suite.name>testng.xml</suite.name>
         <browser.name>chrome</browser.name>
         <chrome.driver.path>C:\Users\21361\Desktop\Testing\chromedriver.exe</chrome.driver.path>
         <userGithub.name></userGithub.name>
-        <chrome.option1>${chrome.option1}</chrome.option1>
-        <chrome.option2>${chrome.option2}</chrome.option2>
+        <!--        <chrome.option1>${chrome.option1}</chrome.option1>-->
+        <!--        <chrome.option2>${chrome.option2}</chrome.option2>-->
         <suite.xml.file></suite.xml.file>
     </properties>
 
 
     <dependencies>
         <dependency>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-testng</artifactId>
-                <version>2.17.3</version>
-            </dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.17.3</version>
+        </dependency>
 
-            <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>7.3.0</version>
-                <scope>compile</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-java</artifactId>
-                <version>4.4.0</version>
-            </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.4.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.3.0</version>
+            <version>7.5</version>
+            <scope>test</scope>
         </dependency>
 
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.13.2</version>
-                <scope>test</scope>
-            </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.6.1</version>
+        </dependency>
     </dependencies>
 
 
-<build>
-    <resources>
-        <resource>
-            <directory>src/main/resources</directory>
-            <filtering>true</filtering>
-        </resource>
-    </resources>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>8</source>
-                <target>8</target>
-            </configuration>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.12.4</version>
-            <configuration>
-                <argLine>
-                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                </argLine>
-                <suiteXmlFiles>
-                    <suiteXmlFile>${suite.xml.file}</suiteXmlFile>
-                </suiteXmlFiles>
-            </configuration>
-            <dependencies>
-                <dependency>
-                    <groupId>org.aspectj</groupId>
-                    <artifactId>aspectjweaver</artifactId>
-                    <version>${aspectj.version}</version>
-                </dependency>
-            </dependencies>
-        </plugin>
-        <plugin>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-maven</artifactId>
-            <version>2.9</version>
-            <configuration>
-                <reportVersion>2.17.3</reportVersion>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-<profiles>
-    <profile>
-        <id>correctName</id>
-        <properties>
-            <suite.xml.file>src/test/resources/testng.xml</suite.xml.file>
-            <userGithub.name>Nastassia Varapai</userGithub.name>
-            <chrome.option2> --window-size=1920,1080</chrome.option2>
-            <chrome.option1>--start-maximized</chrome.option1>
-        </properties>
-    </profile>
-    <profile>
-        <id>inCorrectName</id>
-        <properties>
-            <suite.xml.file>src/test/resources/testng.xml</suite.xml.file>
-            <userGithub.name>user1</userGithub.name>
-            <chrome.option2> --window-size=1920,1080</chrome.option2>
-            <chrome.option1>--start-maximized</chrome.option1>
-        </properties>
-    </profile>
-    <profile>
-        <id>headlessTest</id>
-        <properties>
-            <suite.xml.file>src/test/resources/followTests.xml</suite.xml.file>
-            <chrome.option1>--headless</chrome.option1>
-            <chrome.option2> --window-size=1920,1080</chrome.option2>
-        </properties>
-    </profile>
-</profiles>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suite.xml.file}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+                <dependencies>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <reportVersion>2.17.3</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>correctName</id>
+            <properties>
+                <suite.xml.file>src/test/resources/testng.xml</suite.xml.file>
+                <userGithub.name>Nastassia Varapai</userGithub.name>
+                <chrome.option2>--window-size=1920,1080</chrome.option2>
+                <chrome.option1>--start-maximized</chrome.option1>
+            </properties>
+        </profile>
+        <profile>
+            <id>inCorrectName</id>
+            <properties>
+                <suite.xml.file>src/test/resources/testng.xml</suite.xml.file>
+                <userGithub.name>user1</userGithub.name>
+                <chrome.option2>--window-size=1920,1080</chrome.option2>
+                <chrome.option1>--start-maximized</chrome.option1>
+            </properties>
+        </profile>
+        <profile>
+            <id>headlessTest</id>
+            <properties>
+                <suite.xml.file>src/test/resources/followTests.xml</suite.xml.file>
+                <chrome.option1>--headless</chrome.option1>
+                <chrome.option2>--window-size=1920,1080</chrome.option2>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
