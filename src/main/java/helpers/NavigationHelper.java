@@ -9,7 +9,7 @@ public class NavigationHelper extends AppManager{
 
     public  NavigationHelper(WebDriver driver){
         super(driver);
-        this.driver=driver;
+        this.driver = driver;
         System.out.println("Initialization of  NavigationHelper");
     }
 

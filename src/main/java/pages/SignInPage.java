@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
-import static managers.AppManager.*;
 
 public class SignInPage extends Page {
 

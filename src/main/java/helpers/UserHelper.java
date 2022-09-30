@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 public class UserHelper extends AppManager {
     private WebDriver driver;
 
-    public UserHelper(WebDriver driver){
+    public UserHelper(WebDriver driver) {
         super(driver);
-        this.driver=driver;
+        this.driver = driver;
         System.out.println("Initialization of UserHelper");
     }
 
@@ -21,7 +21,6 @@ public class UserHelper extends AppManager {
         signInPage.fillUserSurnameField(userSurname);
         signInPage.fillUserNumberField(userNumber);
         signInPage.fillUserEmailField(userEmail);
-        // signInPage.clickOnSignInButton();
     }
 
     public int getNumberOfInvalidFields() {

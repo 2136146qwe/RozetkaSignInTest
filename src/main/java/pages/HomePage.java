@@ -1,6 +1,5 @@
 package pages;
 
-import managers.AppManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +12,7 @@ public class HomePage extends Page {
 
     private static final Logger log = Logger.getLogger(String.valueOf(HomePage.class));
 
-     public HomePage(WebDriver driver) {
+    public HomePage(WebDriver driver) {
         super(driver);
     }
 

@@ -11,10 +11,10 @@ import java.time.Duration;
 
 public class TestBase {
 
-      private static WebDriver driver;
+    private static WebDriver driver;
 
-UserHelper userHelper;
-NavigationHelper navigationHelper;
+    UserHelper userHelper;
+    NavigationHelper navigationHelper;
 
     @BeforeMethod
     public void beforeMethod() {
@@ -24,21 +24,21 @@ NavigationHelper navigationHelper;
     public void beforeClass() {
     }
 
-      @BeforeSuite
+    @BeforeSuite
     public void beforeSuite() {
-          File chromeDriver = new File("C:\\Users\\21361\\IdeaProjects\\PageObject\\src\\main\\resources" +
-                  "\\chromedriver.exe");
-          ChromeDriverService chromeDriverService = new ChromeDriverService.Builder()
-                  .usingDriverExecutable(chromeDriver)
-                  .usingAnyFreePort()
-                  .build();
-          ChromeOptions chromeOptions = new ChromeOptions()
-                  .addArguments("--start-maximized");
-          driver = new ChromeDriver(chromeDriverService, chromeOptions);
-          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-          driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        userHelper=new UserHelper(driver);
-        navigationHelper=new NavigationHelper(driver);
+        File chromeDriver = new File("C:\\Users\\21361\\IdeaProjects\\PageObject\\src\\main\\resources" +
+                "\\chromedriver.exe");
+        ChromeDriverService chromeDriverService = new ChromeDriverService.Builder()
+                .usingDriverExecutable(chromeDriver)
+                .usingAnyFreePort()
+                .build();
+        ChromeOptions chromeOptions = new ChromeOptions()
+                .addArguments("--start-maximized");
+        driver = new ChromeDriver(chromeDriverService, chromeOptions);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        userHelper = new UserHelper(driver);
+        navigationHelper = new NavigationHelper(driver);
     }
 
 
