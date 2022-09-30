@@ -1,18 +1,17 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
-import java.util.logging.Logger;
+import static managers.AppManager.*;
 
 public class SignInPage extends Page {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(SignInPage.class));
-
-    public SignInPage(PageManager pages) {
-        super(pages);
+    public SignInPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(id = "registerUserName")

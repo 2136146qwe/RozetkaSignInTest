@@ -12,20 +12,20 @@ public class RozetkaTest extends TestBase {
     @Test
     public void incorrectLoginTest() {
 
-        app.getNavigationHelper().goToLink(PropertyLoader.loadProperty("url"));
-        app.getUserHelper().userSignIn(PropertyLoader.loadProperty("user.name"),
+        getNavigationHelper().goToLink(PropertyLoader.loadProperty("url"));
+        getUserHelper().userSignIn(PropertyLoader.loadProperty("user.name"),
                 PropertyLoader.loadProperty("user.password"), PropertyLoader.loadProperty("user.surname"),
                 new Random().nextInt(2560000) + "", PropertyLoader.loadProperty("user.email"));
-        Assert.assertEquals(app.getUserHelper().getNumberOfInvalidFields(), 5);
+        Assert.assertEquals(getUserHelper().getNumberOfInvalidFields(), 5);
     }
 
     @Test
     public void incorrectLoginTest2() {
 
-        app.getNavigationHelper().goToLink(PropertyLoader.loadProperty("url"));
-        app.getUserHelper().userSignIn(PropertyLoader.loadProperty("user.name"),
+        getNavigationHelper().goToLink(PropertyLoader.loadProperty("url"));
+        getUserHelper().userSignIn(PropertyLoader.loadProperty("user.name"),
                 PropertyLoader.loadProperty("user.password"), PropertyLoader.loadProperty("user.surname"),
                 new Random().nextInt(2560000) + "", PropertyLoader.loadProperty("user.email"));
-        Assert.assertEquals(app.getUserHelper().getNumberOfInvalidFields(), 5);
+        Assert.assertEquals(getUserHelper().getNumberOfInvalidFields(), 5);
     }
 }

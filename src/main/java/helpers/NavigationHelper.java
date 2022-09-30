@@ -1,15 +1,19 @@
 package helpers;
 
 import managers.AppManager;
-import pages.PageManager;
+import org.openqa.selenium.WebDriver;
 
-public class NavigationHelper extends PageManager {
 
-    public NavigationHelper() {
-        super(AppManager.getWebDriver());
+public class NavigationHelper extends AppManager{
+    private WebDriver driver;
+
+    public  NavigationHelper(WebDriver driver){
+        super(driver);
+        this.driver=driver;
+        System.out.println("Initialization of  NavigationHelper");
     }
 
     public void goToLink(String http) {
-        getDriver().get(http);
+        driver.get(http);
     }
 }
